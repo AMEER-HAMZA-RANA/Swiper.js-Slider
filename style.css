@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.Benefits {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.Benefits__Title {
+margin-bottom: 8px;
+font-size: 16px;
+font-weight: 600;
+line-height: 22px;
+text-transform: uppercase;
+}
+
+.Benefits__Items {
+margin-bottom: 8px;
+padding: 10px 10px 10px 0;
+border-top: 1px solid var(--colorBorder);
+border-bottom: 1px solid var(--colorBorder);
+}
+
+.Benefits__Badges {
+display: flex;
+justify-content: space-around;
+padding: 0 4px;
+}
+
+.Benefits__Items .BenefitItem:not(:last-child) {
+margin-bottom: 4px;
+}
+
+.Benefits__Items .BenefitItem {
+cursor: pointer;
+}
+
+.BenefitItem {
+position: relative;
+display: flex;
+align-items: center;
+}
+
+.BenefitItem__Icon, .BenefitBadge__Icon {
+width: 32px;
+height: 32px;
+margin-right: 8px;
+padding: 0 5px;
+display: flex;
+align-items: center;
+}
+
+.BenefitItem__Text {
+margin: 0;
+line-height: 1.333em;
+font-size: 16px;
+}
+
+.BenefitItem .Icon--chevron-right {
+position: absolute;
+right: 0;
+width: 14px;
+height: 14px;
+}
+
+svg:not(:root) {
+overflow: hidden;
+}
+
+.lazyloaded {
+opacity: 1;
+transition: opacity .4s ease;
+}
+
+iframe, img {
+max-width: 100%;
+}
+
+img {
+display: block;
+border: 0 none;
+}
+
+.Benefits__Badges .BenefitBadge {
+cursor: pointer;
+}
+
+.BenefitBadge {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.Benefits__Badges .BenefitBadge:first-of-type .BenefitBadge__Icon {
+padding: 0;
+}
+
+
+.BenefitItem__Icon, .BenefitBadge__Icon {
+width: 32px;
+height: 32px;
+margin-right: 8px;
+padding: 0 5px;
+display: flex;
+align-items: center;
+}
+
+.BenefitBadge__Text {
+font-size: 14px;
+text-align: center;
+}
+
+.BenefitBadge__Icon img {
+height: auto;
+}
+
+.sep_line {
+margin: 15px 0;
+}
+
+.PageOverlay {
+position: fixed;
+top: 0;
+left: 0;
+height: 100vh;
+width: 100vw;
+z-index: 99;
+visibility: hidden;
+opacity: 0;
+background: #363636;
+transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+}
+
+html body[data-upcart-cart-enabled] div[class="PageOverlay is-visible"] {
+display: block !important;
+}
+
+body[data-upcart-cart-enabled] div[class="PageOverlay is-visible"] {
+display: none !important;
+}
+
+.PageOverlay.is-visible {
+opacity: .5;
+visibility: visible;
+}
+
+.BenefitCardSlider {
+position: fixed;
+top: 50%;
+left: 50%;
+z-index: 999;
+width: calc(100% - 64px);
+max-width: 560px;
+transform: translate(-50%, 100%);
+transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+pointer-events: none;
+}
+
+.BenefitCardSlider.-Active {
+transform: translate(-50%, -50%);
+pointer-events: all;
+}
+
+@media screen and (min-width: 375px) {
+.BenefitCardSlider {
+  height: 60%;
+}
+}
+
+.BenefitCardSlider__Container.swiper {
+overflow: visible;
+}
+
+.BenefitCardSlider__Container {
+height: 100%;
+}
+
+.BenefitCardSlider .swiper-wrapper {
+box-sizing: content-box;
+display: flex;
+height: 100%;
+position: relative;
+transition-property: transform;
+width: 100%;
+z-index: 1;
+}
+
+.BenefitCardSlider .swiper-pagination {
+display: flex;
+justify-content: center;
+position: static;
+margin-top: 16px;
+}
+
+.BenefitCardSlider .Button {
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 24px auto 0;
+}
+
+.BenefitCardSlider .BenefitCard {
+height: auto;
+-webkit-user-select: none;
+user-select: none;
+}
+
+.BenefitCardSlider .swiper-slide {
+flex-shrink: 0;
+width: 100%;
+height: 100%;
+position: relative;
+transition-property: transform;
+}
+
+@media screen and (min-width: 375px) {
+.BenefitCard {
+  padding: 32px 40px 40px;
+}
+}
+
+.BenefitCard {
+padding: 16px 24px 24px;
+border-radius: 4px;
+background-color: #fff;
+box-shadow: 2px 2px 16px #0000000d;
+}
+
+.BenefitCard__Icon {
+width: 56px;
+height: 56px;
+margin-bottom: 8px;
+padding: 8px;
+}
+
+.BenefitCard__Title {
+margin-bottom: 16px;
+font-size: 16px;
+font-weight: 600;
+text-transform: uppercase;
+line-height: 22px;
+}
+
+b, strong {
+font-weight: 700;
+}
+
+.BenefitCard p {
+margin: 0 0 15px;
+}
+
+.BenefitCardSlider .swiper-pagination-bullet {
+height: 8px;
+width: 8px;
+background-color: #b0b0b0;
+border-radius: 50px;
+margin: 0 8px;
+}
+
+.BenefitCardSlider .swiper-pagination-bullet.swiper-pagination-bullet-active {
+background-color: #fff;
+}
+
+.BenefitCardSlider .Button__Text {
+color: #fff;
+font-size: 16px;
+line-height: 22px;
+letter-spacing: 0;
+text-transform: none;
+cursor: pointer;
+}
+
+@media only screen and (min-width: 769px) {
+.BenefitCardSlider .BenefitCardSlider__CloseButton .mobile_close {
+  display: none;
+}
+}
+
+.BenefitCardSlider__CloseButton .mobile_close svg {
+height: 20px;
+width: 20px;
+}
+
+svg:not(:root) {
+overflow: hidden;
+}
+
+.swiper-pagination-bullet {
+  cursor: pointer;
+}
